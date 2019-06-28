@@ -9,7 +9,7 @@
  * NOTE: skip this if you are not using mongoose
  *
  */
-//const mongoose = require('./connection.js')
+const mongoose = require('./connection.js')
 
 /* Step 1 alternative
  *
@@ -18,7 +18,7 @@
  * your data once you stop running your server.
  *
  */
-global.sampleModel = [];
+
 
 /* Step 2
  *

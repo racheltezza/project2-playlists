@@ -1,12 +1,21 @@
-<form method="POST" action="/<TODO: models url here (e.g: /accounts)>">
+<h2>Create New User Profile</h2>
 
-  <!--
-    Template for creating input form for a string object key called stringMember
-    NOTE: for numeric input fields use `type="number"`
-  --->
-  <input type="text" value="{{<TODO: model.stringMember (e.g: account.name)}}" placeholder="name" name="<TODO: stringMember (e.g: name)>" />
+<form method="POST" action="/users">
 
-  <input type="checkbox" name="<TODO: model.booleanMember (e.g: account.isActive)" value="true" />
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="name">
+    </div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" placeholder="username">
+    </div>
 
-  <input type="submit" value="Create Shop" />
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" name= "password" id="password" placeholder="password">
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Create Profile" />
+
 </form>

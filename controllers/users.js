@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const templateApi = require('../models/template.js')
+const userApi = require('../models/users.js')
 
 /* Step 3 
  * 
@@ -25,7 +25,7 @@ const templateApi = require('../models/template.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const templateRouter = express.Router()
+const userRouter = express.Router()
 
 /* Step 4
  * 
@@ -36,9 +36,31 @@ const templateRouter = express.Router()
  *
  * TODO: delete this handler; it's just a sample
  */ 
-templateRouter.get('/', (req, res) => {
-  res.send(templateApi.getHelloWorldString())
+userRouter.get('/', (req, res) => {
+  userApi.getAllUsers()
+  .then((users) => {
+    res.render ('users/users', {users})
+  })
 })
+
+// userRouter.get('/:userId', (req, res) => {
+//   userApi.getOneUser(req.params.userId)
+//   return (userId)
+// })
+
+userRouter.post('/', (req, res) => {
+  userApi.addNewUser(req.body)
+  .then(() => {
+    res.redirect('/users')
+  })
+})
+
+userRouter.get('/new', (req, res) => {
+  res.render('users/createUserForm')
+})
+// userRouter.delete('/', (req, res) => {
+//   userApi.deleteUser(req.params.userId)
+// })
 
 /* Step 6
  *
@@ -46,5 +68,5 @@ templateRouter.get('/', (req, res) => {
  *
  */
 module.exports = {
-  templateRouter
+  userRouter
 }

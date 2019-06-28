@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
  * This will need to change for every new project you create.
  *
  */
-const connectionString = process.env.MONGODB_URI || "mongodb://localhost/<db-name>";
+const connectionString = process.env.MONGODB_URI || "mongodb://localhost/users";
 
 
 /* Step 2

@@ -46,19 +46,19 @@ const UsersCollection = mongoose.model('User', UserSchema)
  *
  */
 function getAllUsers() {
-  UsersCollection.find()
+  return UsersCollection.find()
 }
 
 function getOneUser(userId) {
-  UsersCollection.findById(userId)
+  return UsersCollection.findById(userId)
 }
 
 function addNewUser(userObject) {
-  UsersCollection.create(userObject)
+  return UsersCollection.create(userObject)
 }
 
 function deleteUser(userId) {
-  UsersCollection.findByIdAndDelete(userId)
+  return UsersCollection.findByIdAndDelete(userId)
 }
 
 /* Step 5
