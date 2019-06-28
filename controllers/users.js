@@ -16,6 +16,7 @@ const express = require('express')
  * 
  */
 const userApi = require('../models/users.js')
+const playlistApi = require('../models/playlists.js')
 
 /* Step 3 
  * 
@@ -57,6 +58,16 @@ userRouter.post('/', (req, res) => {
 
 userRouter.get('/new', (req, res) => {
   res.render('users/createUserForm')
+})
+
+userRouter.get('/:userId/playlists', (req, res) => {
+  userApi.getOneUser(req.params.userId)
+  .then((user) => {
+    playlistApi.getAllPlaylists(user._id)
+    .then((playlists) => {
+      res.send({user, playlists})
+    })
+  })
 })
 // userRouter.delete('/', (req, res) => {
 //   userApi.deleteUser(req.params.userId)

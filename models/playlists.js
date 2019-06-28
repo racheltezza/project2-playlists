@@ -65,6 +65,10 @@ function editPlaylist(playlistId, playlistObject) {
 function deletePlaylist(playlistId) {
   return PlaylistCollection.findByIdAndDelete(playlistId)
 }
+
+function getPlaylistsByUserId(userId) {
+  return PlaylistCollection.find({userId: userId})
+}
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
@@ -75,5 +79,6 @@ module.exports = {
   getOnePlaylist,
   addPlaylist,
   editPlaylist,
-  deletePlaylist
+  deletePlaylist,
+  getPlaylistsByUserId
 }
