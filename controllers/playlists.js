@@ -52,6 +52,10 @@ playlistRouter.post('/', (req, res) => {
   })
 })
 
+playlistRouter.get('/new', (req, res) => {
+  res.render('playlists/createPlaylistForm')
+})
+
 playlistRouter.put('/:playlistId', (req, res) => {
   playlistApi.editPlaylist(req.params.playlistId, req.body)
   .then(() => {
