@@ -26,9 +26,12 @@ const mongoose = require('./connection.js')
  * NOTE: skip this if you are not using mongoose
  *
  */
-//const SampleModelSchema = new mongoose.Schema({
-//  name: String
-//})
+const PlaylistSchema = new mongoose.Schema({
+ name: String,
+ genre: String,
+ dateCreated: Date,
+ tempo: String
+})
 
 /* Step 3
  *
@@ -36,22 +39,41 @@ const mongoose = require('./connection.js')
  * NOTE: skip this if you are not using mongoose
  *
  */
-//const SampleCollection = mongoose.model('Sample', SampleModelSchema)
+const PlaylistCollection = mongoose.model('Playlist', PlaylistSchema)
 
 /* Step 4
  *
  * TODO: delete this it's just a sample
  *
  */
-function getHelloWorldString() {
-  return 'hello world'
+function getAllPlaylists() {
+  return PlaylistCollection.find()
 }
 
+function getOnePlaylist(playlistId) {
+  return PlaylistCollection.findById(playlistId)
+}
+
+function addPlaylist (playlistObject) {
+  return PlaylistCollection.create(playlistObject)
+}
+
+function editPlaylist(playlistId, playlistObject) {
+  return PlaylistCollection.findByIdAndUpdate(playlistId, playlistObject)
+}
+
+function deletePlaylist(playlistId) {
+  return PlaylistCollection.findByIdAndDelete(playlistId)
+}
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
  * object
  */
 module.exports = {
-  getHelloWorldString
+  getAllPlaylists,
+  getOnePlaylist,
+  addPlaylist,
+  editPlaylist,
+  deletePlaylist
 }
