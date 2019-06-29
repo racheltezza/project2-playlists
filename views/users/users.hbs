@@ -3,10 +3,12 @@
 {{#each users}}
 
 <ul>
-<li>{{name}}</li>
+<li><a href="/users/{{_id}}">{{name}}</a></li>
 <li>{{username}}</li>
 <li>{{password}}</li>
 </ul>
 
 
 {{/each}}
+
+<a href="/users/new" class="badge badge-success">Add New User</a>

@@ -1,14 +1,16 @@
 <h2>User Profile</h2>
-{{#each user}}
-{{_id}}
+{{!-- {{#each user}} --}}
+<ul>
+<li>{{user._id}}</li>
 
-{{name}}
+<li>{{user.name}}</li>
 
-{{username}}
+<li>{{user.username}}</li>
 
-{{password}}
+<li>{{user.password}}</li>
+</ul>
 
-{{/each}}
+{{!-- {{/each}} --}}
 
 
  <form action="/users/{{user._id}}?_method=DELETE" method="POST">
