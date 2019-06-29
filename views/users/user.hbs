@@ -9,3 +9,8 @@
 {{password}}
 
 {{/each}}
+
+
+ <form action="/users/{{user._id}}?_method=DELETE" method="POST">
+<input type="submit"  class="btn btn-danger" value="Delete User">
+</form>
