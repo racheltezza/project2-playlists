@@ -41,6 +41,7 @@ userRouter.get('/', (req, res) => {
   userApi.getAllUsers()
   .then((users) => {
     res.render ('users/users', {users})
+    console.log(users)
   })
 })
 
@@ -65,10 +66,22 @@ userRouter.get('/:userId/playlists', (req, res) => {
   .then((user) => {
     playlistApi.getAllPlaylists(user._id)
     .then((playlists) => {
-      res.send({user, playlists})
+      res.render('playlists/playlists', {user, playlists})
     })
   })
 })
+
+userRouter.get('/:userId', (req, res) => {
+  userApi.getOneUser(req.params.userId)
+  .then((user) => {
+      res.render('./users/user', {user})
+  })
+  .catch((err) => {
+      res.send(err)
+    })
+})
+
+
 // userRouter.delete('/', (req, res) => {
 //   userApi.deleteUser(req.params.userId)
 // })
