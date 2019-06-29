@@ -1,6 +1,27 @@
-<h2>All this Users Playlists</h2>
+<h2>All Playlists</h2>
 {{!-- {{#each user._id.playlist}}
 {{name}}
 {{genre}}
 
 {{/each}} --}}
+
+{{#each playlists}}
+
+<ul>
+
+    <li><a href="/playlists/{{_id}}">{{name}}</a></li>
+
+<li>{{name}}</li>
+
+<li>{{genre}}</li>
+
+<li>{{tempo}}</li>
+
+</form>
+
+
+</ul>
+{{/each}}
+
+
+<a href="/playlists/new" class="badge badge-success">Add New Playlist</a>

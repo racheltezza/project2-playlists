@@ -40,6 +40,7 @@ const playlistRouter = express.Router()
 playlistRouter.get('/', (req, res) => {
   playlistApi.getAllPlaylists()
   .then((playlists) => {
+    console.log(playlists)
     res.render('playlists/playlists', {playlists})
   })
   
@@ -56,6 +57,13 @@ playlistRouter.get('/new', (req, res) => {
   res.render('playlists/createPlaylistForm')
 })
 
+playlistRouter.get('/:playlistId', (req, res) => {
+  playlistApi.getOnePlaylist(req.params.playlistId)
+  .then((playlist) => {
+    res.render('playlists/playlist', {playlist})
+  })
+})
+
 playlistRouter.put('/:playlistId', (req, res) => {
   playlistApi.editPlaylist(req.params.playlistId, req.body)
   .then(() => {
@@ -66,7 +74,7 @@ playlistRouter.put('/:playlistId', (req, res) => {
 playlistRouter.delete('/:playlistId', (req, res) => {
   playlistApi.deletePlaylist(req.params.playlistId)
   .then (() => {
-    res.redirect('playlists/playlists')
+    res.redirect('/playlists')
   })
 })
 
