@@ -1,0 +1,22 @@
+<h2>Edit Playlist</h2>
+
+
+<form method="POST" action="/playlists/{{playlist._id}}?_method=PUT">
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="{{playlist.name}}">
+    </div>
+    <div class="form-group">
+        <label for="genre">Genre</label>
+        <input type="text" name="genre" id="genre" value="{{playlist.genre}}">
+    </div>
+
+    <div class="form-group">
+        <label for="tempo">Tempo</label>
+        <input type="text" name= "tempo" id="tempo" value="{{playlist.tempo}}">
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Update Playlist" />
+
+</form>

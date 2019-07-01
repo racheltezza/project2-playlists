@@ -64,10 +64,19 @@ playlistRouter.get('/:playlistId', (req, res) => {
   })
 })
 
+playlistRouter.get('/:playlistId/edit', (req, res) => {
+  playlistApi.getOnePlaylist(req.params.playlistId)
+  .then((playlist) => {
+    res.render('playlists/editPlaylistForm', {playlist})
+  })
+})
 playlistRouter.put('/:playlistId', (req, res) => {
   playlistApi.editPlaylist(req.params.playlistId, req.body)
   .then(() => {
-    res.redirect('playlists/playlists')
+    res.redirect('/playlists')
+  })
+  .catch((err) => {
+    res.send(err)
   })
 })
 
