@@ -63,6 +63,13 @@ songRouter.post('/', (req, res) => {
   })
 })
 
+songRouter.delete('/:songId', (req, res) => {
+  SongApi.deleteSong(req.params.songId)
+  .then(() => {
+    res.redirect('/songs')
+  })
+})
+
 /* Step 6
  *
  * Export the router from the file.
