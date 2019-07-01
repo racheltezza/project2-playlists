@@ -44,6 +44,10 @@ songRouter.get('/', (req, res) => {
   })
 })
 
+songRouter.get('/new', (req, res) => {
+  res.render('songs/createSongForm')
+})
+
 songRouter.get('/:songId', (req, res) => {
   SongApi.getOneSong(req.params.songId)
   .then((song) => {
