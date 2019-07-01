@@ -8,3 +8,7 @@
 <li>Tempo: {{song.tempo}}</li>
 <li>Listen: {{song.file}}</li>
 </ul>
+
+<form method="POST" action="/songs/{{song._id}}?_method=DELETE">
+<input type="submit" class="btn btn-danger" value="Remove Song">
+</form>
