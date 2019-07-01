@@ -19,7 +19,7 @@ const methodOverride = require('method-override')
  */
 const { userRouter } = require('./controllers/users.js')
 const {playlistRouter} = require('./controllers/playlists.js')
-
+const {songRouter} = require('./controllers/songs.js')
 
 /* Step 3
  *
@@ -64,6 +64,7 @@ app.set('view engine', 'hbs')
  */
 app.use('/users', userRouter)
 app.use('/playlists', playlistRouter)
+app.use('/songs', songRouter)
 
 /* Step 5
  *

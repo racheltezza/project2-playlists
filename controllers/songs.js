@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const templateApi = require('../models/template.js')
+const SongApi = require('../models/songs.js')
 
 /* Step 3 
  * 
@@ -25,7 +25,7 @@ const templateApi = require('../models/template.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const templateRouter = express.Router()
+const songRouter = express.Router()
 
 /* Step 4
  * 
@@ -36,8 +36,27 @@ const templateRouter = express.Router()
  *
  * TODO: delete this handler; it's just a sample
  */ 
-templateRouter.get('/', (req, res) => {
-  res.send(templateApi.getHelloWorldString())
+songRouter.get('/', (req, res) => {
+  SongApi.getAllSongs()
+  .then((songs) => {
+    res.render('./songs/songs', {songs})
+    console.log(songs)
+  })
+})
+
+songRouter.get('/:songId', (req, res) => {
+  SongApi.getOneSong(req.params.songId)
+  .then((song) => {
+    res.render('./songs/song', {song})
+  })
+})
+
+
+songRouter.post('/', (req, res) => {
+  SongApi.addSong(req.body)
+  .then(() => {
+    res.redirect('/songs')
+  })
 })
 
 /* Step 6
@@ -46,5 +65,5 @@ templateRouter.get('/', (req, res) => {
  *
  */
 module.exports = {
-  templateRouter
+  songRouter
 }
