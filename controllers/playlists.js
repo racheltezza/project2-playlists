@@ -41,7 +41,7 @@ const playlistRouter = express.Router({mergeParams: true})
 playlistRouter.get('/', (req, res) => {
   playlistApi.getAllPlaylists()
   .then((playlists) => {
-    console.log(playlists)
+    // console.log(playlists)
     res.render('playlists/playlists', {playlists})
   })
   
@@ -102,6 +102,7 @@ playlistRouter.get('/:playlistId/edit', (req, res) => {
 playlistRouter.get('/:playlistId', (req, res) => {
   playlistApi.getOnePlaylist(req.params.playlistId)
   .then((playlist) => {
+    console.log(playlist)
     res.render('./playlists/playlist', {playlist})
   })
 })
