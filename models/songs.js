@@ -9,7 +9,7 @@
  * NOTE: skip this if you are not using mongoose
  *
  */
-//const mongoose = require('./connection.js')
+const mongoose = require('./connection.js')
 
 /* Step 1 alternative
  *
@@ -17,8 +17,7 @@
  * NOTE: doing this WILL NOT persist your data and you will loose
  * your data once you stop running your server.
  *
- */
-global.sampleModel = [];
+
 
 /* Step 2
  *
@@ -26,9 +25,13 @@ global.sampleModel = [];
  * NOTE: skip this if you are not using mongoose
  *
  */
-//const SampleModelSchema = new mongoose.Schema({
-//  name: String
-//})
+const SongSchema = new mongoose.Schema({
+ name: String,
+ artist: String,
+ genre: String,
+ tempo: String,
+ file: String
+})
 
 /* Step 3
  *
@@ -36,15 +39,27 @@ global.sampleModel = [];
  * NOTE: skip this if you are not using mongoose
  *
  */
-//const SampleCollection = mongoose.model('Sample', SampleModelSchema)
+const SongCollection = mongoose.model('Song', SongSchema)
 
 /* Step 4
  *
  * TODO: delete this it's just a sample
  *
  */
-function getHelloWorldString() {
-  return 'hello world'
+function getAllSongs() {
+  return SongCollection.find()
+}
+
+function getOneSong(songId) {
+  return SongCollection.findById(songId)
+}
+
+function addSong(songObject) {
+  return SongCollection.create(songObject)
+}
+
+function deleteSong(songId) {
+  return SongCollection.findByIdAndDelete(songId)
 }
 
 /* Step 5
@@ -53,5 +68,8 @@ function getHelloWorldString() {
  * object
  */
 module.exports = {
-  getHelloWorldString
+  getAllSongs,
+  getOneSong,
+  addSong,
+  deleteSong
 }
