@@ -9,7 +9,7 @@
 
 <ul>
 
-    <li><a href="/playlists/{{_id}}">{{name}}</a></li>
+    <li><a href="/users/{{user._id}}/playlists/{{_id}}">{{name}}</a></li>
 
 <li>{{name}}</li>
 
@@ -24,4 +24,4 @@
 {{/each}}
 
 
-<a href="/playlists/new" class="badge badge-success">Add New Playlist</a>
+<a href="/users/{{user._id}}/playlists/new" class="badge badge-success">Add New Playlist</a>
