@@ -6,9 +6,15 @@
 <li>{{playlist.tempo}}</li>
 
 </ul>
+{{#each songs}}
+{{name}}
+
+{{/each}}
 
 <a href="/playlists/{{playlist._id}}/edit" class="badge badge-primary">Edit Playlist</a>
 
     <form action="/playlists/{{playlist._id}}?_method=DELETE" method="POST">
 <input type="submit"  class="btn btn-danger" value="Delete Playlist">
 </form>
+
+<a href="/playlists/{{playlist._id}}/songs/new">Add New Song</a>

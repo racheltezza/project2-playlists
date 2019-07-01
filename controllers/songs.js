@@ -16,6 +16,7 @@ const express = require('express')
  * 
  */
 const SongApi = require('../models/songs.js')
+const PlaylistApi = require('../models/playlists.js')
 
 /* Step 3 
  * 
@@ -25,7 +26,7 @@ const SongApi = require('../models/songs.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const songRouter = express.Router()
+const songRouter = express.Router({mergeParams: true})
 
 /* Step 4
  * 
@@ -45,7 +46,10 @@ songRouter.get('/', (req, res) => {
 })
 
 songRouter.get('/new', (req, res) => {
-  res.render('songs/createSongForm')
+  PlaylistApi.getOnePlaylist(req.params.playlistId)
+  .then((playlist) => {
+    res.render('songs/createSongForm', {playlist})
+  })
 })
 
 songRouter.get('/:songId', (req, res) => {
@@ -57,9 +61,11 @@ songRouter.get('/:songId', (req, res) => {
 
 
 songRouter.post('/', (req, res) => {
+  console.log(req.body)
+  req.body.playlistId = req.params.playlistId
   SongApi.addSong(req.body)
   .then(() => {
-    res.redirect('/songs')
+    res.redirect(`/playlists/${req.params.playlistId}`)
   })
 })
 

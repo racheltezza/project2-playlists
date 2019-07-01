@@ -64,7 +64,7 @@ app.set('view engine', 'hbs')
  */
 app.use('/users', userRouter)
 app.use('/playlists', playlistRouter)
-app.use('/songs', songRouter)
+app.use('/playlists/:playlistId/songs', songRouter)
 
 /* Step 5
  *

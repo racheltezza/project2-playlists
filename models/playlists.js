@@ -30,7 +30,8 @@ const PlaylistSchema = new mongoose.Schema({
  name: String,
  genre: String,
  dateCreated: Date,
- tempo: String
+ tempo: String,
+ playlistId: mongoose.Types.ObjectId
 })
 
 /* Step 3

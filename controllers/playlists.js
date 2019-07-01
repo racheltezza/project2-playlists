@@ -16,7 +16,8 @@ const express = require('express')
  * 
  */
 const playlistApi = require('../models/playlists.js')
-const userApi = require('../models/users.js')
+// const userApi = require('../models/users.js')
+const songApi = require('../models/songs.js')
 
 /* Step 3 
  * 
@@ -26,7 +27,7 @@ const userApi = require('../models/users.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const playlistRouter = express.Router()
+const playlistRouter = express.Router({mergeParams: true})
 
 /* Step 4
  * 
@@ -57,12 +58,12 @@ playlistRouter.get('/new', (req, res) => {
   res.render('playlists/createPlaylistForm')
 })
 
-playlistRouter.get('/:playlistId', (req, res) => {
-  playlistApi.getOnePlaylist(req.params.playlistId)
-  .then((playlist) => {
-    res.render('playlists/playlist', {playlist})
-  })
-})
+// playlistRouter.get('/:playlistId', (req, res) => {
+//   playlistApi.getOnePlaylist(req.params.playlistId)
+//   .then((playlist) => {
+//     res.render('playlists/playlist', {playlist})
+//   })
+// })
 
 playlistRouter.get('/:playlistId/edit', (req, res) => {
   playlistApi.getOnePlaylist(req.params.playlistId)
@@ -70,6 +71,18 @@ playlistRouter.get('/:playlistId/edit', (req, res) => {
     res.render('playlists/editPlaylistForm', {playlist})
   })
 })
+
+playlistRouter.get('/:playlistId', (req, res) => {
+  playlistApi.getOnePlaylist(req.params.playlistId)
+  .then((playlist) => {
+    songApi.getSongsByPlaylist(playlist._id)
+    .then((songs) => {
+      console.log(songs)
+      res.render('playlists/playlist', {playlist, songs})
+    })
+  })
+})
+
 playlistRouter.put('/:playlistId', (req, res) => {
   playlistApi.editPlaylist(req.params.playlistId, req.body)
   .then(() => {

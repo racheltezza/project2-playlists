@@ -30,7 +30,8 @@ const SongSchema = new mongoose.Schema({
  artist: String,
  genre: String,
  tempo: String,
- file: String
+ file: String,
+ playlistId: mongoose.Types.ObjectId
 })
 
 /* Step 3
@@ -46,6 +47,11 @@ const SongCollection = mongoose.model('Song', SongSchema)
  * TODO: delete this it's just a sample
  *
  */
+
+function getSongsByPlaylist(playlistId) {
+  return SongCollection.find({playlistId: playlistId})
+
+}
 function getAllSongs() {
   return SongCollection.find()
 }
@@ -71,5 +77,6 @@ module.exports = {
   getAllSongs,
   getOneSong,
   addSong,
-  deleteSong
+  deleteSong,
+  getSongsByPlaylist
 }
