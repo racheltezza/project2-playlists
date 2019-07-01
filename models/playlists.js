@@ -31,7 +31,7 @@ const PlaylistSchema = new mongoose.Schema({
  genre: String,
  dateCreated: Date,
  tempo: String,
- playlistId: mongoose.Types.ObjectId
+ userId: mongoose.Types.ObjectId
 })
 
 /* Step 3

@@ -63,7 +63,7 @@ app.set('view engine', 'hbs')
  * the paths defined in the router.
  */
 app.use('/users', userRouter)
-app.use('/playlists', playlistRouter)
+app.use('/users/:userId/playlists', playlistRouter)
 app.use('/playlists/:playlistId/songs', songRouter)
 
 /* Step 5

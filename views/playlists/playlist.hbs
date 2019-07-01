@@ -1,13 +1,16 @@
-<h2>One Playlist</h2>
+<h2>{{playlist.name}}</h2>
 
 <ul>
-<li>{{playlist.name}}</li>
 <li>{{playlist.genre}}</li>
 <li>{{playlist.tempo}}</li>
 
 </ul>
 {{#each songs}}
-{{name}}
+<ul>
+    
+<li>{{name}}</li>
+<li>{{artist}}</li>
+</ul>
 
 {{/each}}
 

@@ -16,7 +16,7 @@ const express = require('express')
  * 
  */
 const SongApi = require('../models/songs.js')
-const PlaylistApi = require('../models/playlists.js')
+const playlistApi = require('../models/playlists.js')
 
 /* Step 3 
  * 
@@ -46,7 +46,7 @@ songRouter.get('/', (req, res) => {
 })
 
 songRouter.get('/new', (req, res) => {
-  PlaylistApi.getOnePlaylist(req.params.playlistId)
+  playlistApi.getOnePlaylist(req.params.playlistId)
   .then((playlist) => {
     res.render('songs/createSongForm', {playlist})
   })

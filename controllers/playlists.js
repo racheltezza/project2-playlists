@@ -16,7 +16,7 @@ const express = require('express')
  * 
  */
 const playlistApi = require('../models/playlists.js')
-// const userApi = require('../models/users.js')
+const userApi = require('../models/users.js')
 const songApi = require('../models/songs.js')
 
 /* Step 3 
@@ -47,15 +47,31 @@ playlistRouter.get('/', (req, res) => {
   
 })
 
+// playlistRouter.post('/', (req, res) => {
+//   playlistApi.addPlaylist(req.body)
+//   .then (() => {
+//     res.redirect('/playlists')
+//   })
+// })
+
 playlistRouter.post('/', (req, res) => {
+  console.log(req.body)
+  req.body.userId = req.params.userId
   playlistApi.addPlaylist(req.body)
-  .then (() => {
-    res.redirect('/playlists')
+  .then(() => {
+    res.redirect(`/users/${req.params.userId}/playlists`)
   })
 })
 
+// playlistRouter.get('/new', (req, res) => {
+//   res.render('playlists/createPlaylistForm')
+// })
+
 playlistRouter.get('/new', (req, res) => {
-  res.render('playlists/createPlaylistForm')
+  userApi.getOneUser(req.params.userId)
+  .then((user) => {
+    res.render('playlists/createPlaylistForm', {user})
+  })
 })
 
 // playlistRouter.get('/:playlistId', (req, res) => {
@@ -72,14 +88,21 @@ playlistRouter.get('/:playlistId/edit', (req, res) => {
   })
 })
 
+// playlistRouter.get('/:playlistId', (req, res) => {
+//   playlistApi.getOnePlaylist(req.params.playlistId)
+//   .then((playlist) => {
+//     songApi.getSongsByPlaylist(playlist._id)
+//     .then((songs) => {
+//       console.log(songs)
+//       res.render('playlists/playlist', {playlist, songs})
+//     })
+//   })
+// })
+
 playlistRouter.get('/:playlistId', (req, res) => {
   playlistApi.getOnePlaylist(req.params.playlistId)
   .then((playlist) => {
-    songApi.getSongsByPlaylist(playlist._id)
-    .then((songs) => {
-      console.log(songs)
-      res.render('playlists/playlist', {playlist, songs})
-    })
+    res.render('./playlists/playlist', {playlist})
   })
 })
 
