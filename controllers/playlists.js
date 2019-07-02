@@ -47,6 +47,16 @@ playlistRouter.get('/', (req, res) => {
   
 })
 
+playlistRouter.get('/:playlistId/songs', (req, res) => {
+  playlistApi.getOnePlaylist(req.params.playlistId)
+  .then((playlist) => {
+    songApi.getSongsByPlaylist(playlist._id)
+    .then((songs) => {
+      res.render('songs/songs', {playlist, songs})
+    })
+  })
+})
+
 // playlistRouter.post('/', (req, res) => {
 //   playlistApi.addPlaylist(req.body)
 //   .then (() => {
