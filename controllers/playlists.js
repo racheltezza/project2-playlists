@@ -113,7 +113,7 @@ playlistRouter.get('/:playlistId', (req, res) => {
 playlistRouter.put('/:playlistId', (req, res) => {
   playlistApi.editPlaylist(req.params.playlistId, req.body)
   .then(() => {
-    res.redirect('/playlists')
+    res.redirect(`/users/${req.params.userId}/playlists`)
   })
   .catch((err) => {
     res.send(err)

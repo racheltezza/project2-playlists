@@ -17,6 +17,7 @@ const express = require('express')
  */
 const SongApi = require('../models/songs.js')
 const playlistApi = require('../models/playlists.js')
+const userApi = require('../models/users.js')
 
 /* Step 3 
  * 
@@ -65,14 +66,14 @@ songRouter.post('/', (req, res) => {
   req.body.playlistId = req.params.playlistId
   SongApi.addSong(req.body)
   .then(() => {
-    res.redirect(`/playlists/${req.params.playlistId}`)
+    res.redirect(`/users/${req.params.userId}/playlists/${req.params.playlistId}/songs`)
   })
 })
 
 songRouter.delete('/:songId', (req, res) => {
   SongApi.deleteSong(req.params.songId)
   .then(() => {
-    res.redirect('/songs')
+    res.redirect(`/users/${req.params.userId}/playlists/${req.params.playlistId}/songs`)
   })
 })
 
