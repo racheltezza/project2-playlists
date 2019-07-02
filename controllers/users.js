@@ -64,7 +64,7 @@ userRouter.get('/new', (req, res) => {
 userRouter.get('/:userId/playlists', (req, res) => {
   userApi.getOneUser(req.params.userId)
   .then((user) => {
-    playlistApi.getAllPlaylists(user._id)
+    playlistApi.getPlaylistsByUserId(user._id)
     .then((playlists) => {
       res.render('playlists/playlists', {user, playlists})
     })

@@ -4,14 +4,14 @@
 {{#each songs}} 
 <ul>
    
-<li> <a href="/songs/{{_id}}">"{{name}}"</a></li>
+<li> <a href="/users/{{userId}}/playlists/{{playlistId}}/songs/{{_id}}">"{{name}}"</a></li>
 <li>{{artist}}</li>
 
 <li>{{genre}}</li>
 <li>{{tempo}}</li>
 <li>{{file}}</li>
 <li> 
-        <form action="/users/{{user._id}}/playlists/{{playlist._id}}/songs/{{song._id}}?_method=DELETE" method="POST">
+        <form action="/users/{{userId}}/playlists/{{playlistId}}/songs/{{_id}}?_method=DELETE" method="POST">
 <input type="submit"  class="btn btn-danger" value="Delete Song">
 
 

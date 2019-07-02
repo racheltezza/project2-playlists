@@ -64,6 +64,7 @@ songRouter.get('/:songId', (req, res) => {
 songRouter.post('/', (req, res) => {
   console.log(req.body)
   req.body.playlistId = req.params.playlistId
+  req.body.userId = req.params.userId
   SongApi.addSong(req.body)
   .then(() => {
     res.redirect(`/users/${req.params.userId}/playlists/${req.params.playlistId}/songs`)
