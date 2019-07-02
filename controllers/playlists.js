@@ -61,6 +61,9 @@ playlistRouter.post('/', (req, res) => {
   .then(() => {
     res.redirect(`/users/${req.params.userId}/playlists`)
   })
+   .catch((err) => {
+    res.send(err)
+  })
 })
 
 // playlistRouter.get('/new', (req, res) => {
