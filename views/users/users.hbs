@@ -1,14 +1,13 @@
-<h2>all users</h2>
+<h2>ALL USERS</h2>
 
 {{#each users}}
 
-<ul>
+<ul class="list-group list-group-flush">
 <li><a href="/users/{{_id}}/playlists">{{name}}</a></li>
-<li>{{username}}</li>
-<li>{{password}}</li>
+<li class="font-weight-bold">{{username}}</li>
 </ul>
 
 
 {{/each}}
 
-<a href="/users/new" class="badge badge-success">Add New User</a>
+<a href="/users/new">Add New User</a>

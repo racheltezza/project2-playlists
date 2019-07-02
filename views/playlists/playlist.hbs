@@ -1,13 +1,13 @@
 <a href="/users/{{playlist.userId}}/playlists">Back To All Playlists</a>
 
 <h2>{{playlist.name}}</h2>
-<a href="/users/{{playlist.userId}}/playlists/{{playlist._id}}/edit" class="badge badge-primary">Edit Playlist Info</a>
+<a href="/users/{{playlist.userId}}/playlists/{{playlist._id}}/edit">Edit Playlist Info</a>
 
-<ul>
-<li>{{playlist.genre}}</li>
-<li>{{playlist.tempo}}</li>
+<div>
+<p class="sublist-item">{{playlist.genre}}</p>
+<p class="sublist-item">{{playlist.tempo}}</p>
 
-</ul>
+</div>
 
 
 {{#each songs}} 

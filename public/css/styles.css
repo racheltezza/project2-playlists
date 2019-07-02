@@ -1,0 +1,55 @@
+h2 {
+    color: purple;
+    text-align: center;
+}
+
+ul {
+  text-align: center;
+  font-size: 30px;
+  list-style: none;
+}
+
+.sublist-item {
+    font-size: 20px;
+}
+
+p {
+    text-align: center;
+}
+
+.btn-danger {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center; 
+}
+
+a {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center; 
+}
+
+.badge-primary {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* .forms {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+} */
+
+.form-group {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 20px;
+}
+
+.btn-primary {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}

@@ -16,7 +16,7 @@ To Do: develop an application integrating databases and working with MVC archite
 
 Languages: HTML, CSS, JavaScript
 
-Tools: Mongo, Mongoose, Heroku
+Tools: Mongo, Mongoose, Heroku, Express, Handlebars
 
 Libraries: Bootstrap
 
