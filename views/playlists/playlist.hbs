@@ -1,4 +1,7 @@
+<a href="/users/{{playlist.userId}}/playlists">Back To All Playlists</a>
+
 <h2>{{playlist.name}}</h2>
+<a href="/users/{{playlist.userId}}/playlists/{{playlist._id}}/edit" class="badge badge-primary">Edit Playlist Info</a>
 
 <ul>
 <li>{{playlist.genre}}</li>
@@ -18,7 +21,7 @@
 <li>{{file}}</li>
 <li> 
         <form action="/users/{{userId}}/playlists/{{playlistId}}/songs/{{_id}}?_method=DELETE" method="POST">
-<input type="submit"  class="btn btn-danger" value="Delete Song">
+<input type="submit"  class="btn btn-danger" value="Remove Song">
 
 
 </form>
@@ -26,12 +29,15 @@
 </ul>
 {{/each}}
 
-<a href="/users/{{playlist.userId}}/playlists/{{playlist._id}}/edit" class="badge badge-primary">Edit Playlist</a>
+
+
+
+
+<a href="/users/{{playlist.userId}}/playlists/{{playlist._id}}/songs/new">Add New Song To Playlist</a>
+
 
     <form action="/users/{{playlist.userId}}/playlists/{{playlist._id}}?_method=DELETE" method="POST">
 <input type="submit"  class="btn btn-danger" value="Delete Playlist">
 </form>
-
-<a href="/users/{{playlist.userId}}/playlists/{{playlist._id}}/songs/new">Add New Song</a>
 
 
