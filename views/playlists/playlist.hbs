@@ -5,13 +5,25 @@
 <li>{{playlist.tempo}}</li>
 
 </ul>
-{{#each songs}}
-<ul>
-    
-<li>{{name}}</li>
-<li>{{artist}}</li>
-</ul>
 
+
+{{#each songs}} 
+<ul>
+   
+<li> <a href="/users/{{userId}}/playlists/{{playlistId}}/songs/{{_id}}">"{{name}}"</a></li>
+<li>{{artist}}</li>
+
+<li>{{genre}}</li>
+<li>{{tempo}}</li>
+<li>{{file}}</li>
+<li> 
+        <form action="/users/{{userId}}/playlists/{{playlistId}}/songs/{{_id}}?_method=DELETE" method="POST">
+<input type="submit"  class="btn btn-danger" value="Delete Song">
+
+
+</form>
+</li>
+</ul>
 {{/each}}
 
 <a href="/users/{{playlist.userId}}/playlists/{{playlist._id}}/edit" class="badge badge-primary">Edit Playlist</a>

@@ -52,7 +52,7 @@ playlistRouter.get('/:playlistId/songs', (req, res) => {
   .then((playlist) => {
     songApi.getSongsByPlaylist(playlist._id)
     .then((songs) => {
-      res.render('songs/songs', {playlist, songs})
+      res.render('playlists/playlist', {playlist, songs})
     })
   })
 })
