@@ -123,7 +123,7 @@ playlistRouter.put('/:playlistId', (req, res) => {
 playlistRouter.delete('/:playlistId', (req, res) => {
   playlistApi.deletePlaylist(req.params.playlistId)
   .then (() => {
-    res.redirect('/playlists')
+    res.redirect(`/users/${req.params.userId}/playlists`)
   })
 })
 
