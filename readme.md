@@ -8,18 +8,21 @@
 
 [Trello](https://trello.com/b/HBh6qHWL/sei22-project-2 "My Trello board")
 
-<img src="/images/playlists_wireframes1.JPG" alt="wireframe" width="400"/>
 
-![playlists wireframes | width=200](/images/playlists_wireframes1.JPG)
-![playlists wireframes](/images/playlists_wireframes2.JPG)
-![playlists ERD](/images/playlists_erd.jpg)
+#### Wireframes
+<img src="/images/playlists_wireframes1.JPG" alt="wireframe" width="350"/>
 
-To Do: develop a full MEHN stack application integrating databases and working with MVC architechture
+<img src="/images/playlists_wireframes2.JPG" alt="wireframe" width="350"/>
 
-Languages: HTML, CSS, JavaScript
+#### ERD
+<img src="/images/playlists_erd.jpg" alt="wireframe" width="350"/>
 
-Stack: Mongo, Express, Handlebars, Node
+* To Do: develop a full MEHN stack application integrating databases and working with MVC architechture
 
-Libraries: Bootstrap
+* Languages: HTML, CSS, JavaScript
+
+* Stack: Mongo, Express, Handlebars, Node
+
+* Libraries: Bootstrap
 
 
