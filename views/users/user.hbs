@@ -1,6 +1,11 @@
 
 
-<h2>User Profile</h2>
+<h2>{{user.name}}'s Profile</h2>
+
+<div class="clearfix">
+<a href="/users/{{user._id}}/playlists" class="back-to-user">Back to {{user.name}}'s Playlists</a>
+
+</div>
 
 {{!-- {{#each user}} --}}
 <ul>
@@ -20,5 +25,5 @@
 
 
  <form action="/users/{{user._id}}?_method=DELETE" method="POST">
-<input type="submit"  class="btn btn-danger" value="Delete User">
+<input type="submit"  class="btn btn-danger btn-sm" value="Delete User">
 </form>

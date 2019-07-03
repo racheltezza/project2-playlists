@@ -1,11 +1,15 @@
 <h2>"{{song.name}}" by {{song.artist}}</h2>
 
-<ul>
-<li>Title: "{{song.name}}"</li>
-<li>Artist: {{song.artist}}</li>
+<div class="clearfix">
+<a href="/users/{{song.userId}}/playlists/{{song.playlistId}}/songs" class="back-to-playlist">Back to Playlist</a>
 
-<li>Genre: {{song.genre}}</li>
-<li>Tempo: {{song.tempo}}</li>
+</div>
+
+<ul>
+<li class="profile-item"><span class="profile-info">Title:</span> "{{song.name}}"</li>
+<li class="profile-item"><span class="profile-info">Artist:</span> {{song.artist}}</li>
+<li class="profile-item"><span class="profile-info">Genre:</span> {{song.genre}}</li>
+<li class="profile-item"><span class="profile-info">Tempo:</span> {{song.tempo}}</li>
 {{!-- <li>Listen: {{song.file}}</li> --}}
 </ul>
 

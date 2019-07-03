@@ -15,9 +15,15 @@ ul {
   font-size: 20px;
   list-style: none;
   color: #dfe0e2;
+  margin: 10px auto;
   /* display: flex;
   justify-content: center; */
 }
+
+/* li {
+    display: flex;
+    justify-content: center;
+} */
 
 .sublist-item-genre {
     font-size: 20px;
@@ -32,7 +38,7 @@ ul {
     display: flex;
     justify-content: center;
     text-align: center;
-    color: #b7999c;
+    color: #aaaaaa;
 }
 
 p {
@@ -88,6 +94,16 @@ a {
 }
 
 .back-to-users {
+    float: left;
+    margin: 0px 0 0 10px;
+}
+
+.back-to-playlist {
+    float: left;
+    margin: 0px 0 0 10px;
+}
+
+.back-to-user {
     float: left;
     margin: 0px 0 0 10px;
 }
@@ -171,4 +187,11 @@ a {
     display: flex;
     justify-content: center;
     margin: 20px auto;
+}
+
+.btn-warning {
+    display: inline-flex;
+    justify-content: flex-end;
+    margin: 10px auto;
+    
 }

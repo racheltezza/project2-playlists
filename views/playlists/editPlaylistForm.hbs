@@ -4,17 +4,40 @@
 <form method="POST" action="/users/{{playlist.userId}}/playlists/{{playlist._id}}?_method=PUT">
 
     <div class="form-group">
-        <label for="name">Name</label>
+        <label for="name" class="form-label">Name</label>
         <input type="text" name="name" id="name" value="{{playlist.name}}">
     </div>
-    <div class="form-group">
-        <label for="genre">Genre</label>
+
+    {{!-- <div class="form-group">
+        <label for="genre" class="form-label">Genre</label>
         <input type="text" name="genre" id="genre" value="{{playlist.genre}}">
+    </div> --}}
+
+        <div class="form-group">
+        <label for="genre" class="form-label">Genre</label>
+        <select class="custom-select" name="genre" id="genre">
+            <option selected>{{playlist.genre}}</option>
+            <option>Alternative</option>
+            <option>Hip Hop</option>
+            <option>Pop</option>
+            <option>Electronic</option>
+            <option>Rock</option>
+        </select>
     </div>
 
-    <div class="form-group">
-        <label for="tempo">Tempo</label>
+    {{!-- <div class="form-group">
+        <label for="tempo" class="form-label">Tempo</label>
         <input type="text" name= "tempo" id="tempo" value="{{playlist.tempo}}">
+    </div> --}}
+
+        <div class="form-group">
+        <label for="tempo" class="form-label">Tempo</label>
+        <select class="custom-select" name= "tempo" id="tempo">
+            <option selected>{{playlist.tempo}}</option>
+            <option>Slow</option>
+            <option>Medium</option>
+            <option>Fast</option>
+        </select>
     </div>
 
     <input type="submit" class="btn btn-primary" value="Update Playlist" />
