@@ -12,13 +12,13 @@
 
 
 {{#each songs}} 
-<ul id="song-detailed">
+<ul id="playlist-songs">
    
 <li class="name"> <a href="/users/{{userId}}/playlists/{{playlistId}}/songs/{{_id}}">"{{name}}"</a></li>
-<li class="artist">/ {{artist}} /</li>
+<li class="artist">/ {{artist}}</li>
 
-<li class="genre"> {{genre}} /</li>
-<li class="tempo"> {{tempo}}</li>
+<li class="genre"> / {{genre}}</li>
+<li class="tempo"> / {{tempo}}</li>
 {{!-- <li class="file">{{file}}</li> --}}
 <li> 
         <form action="/users/{{userId}}/playlists/{{playlistId}}/songs/{{_id}}?_method=DELETE" method="POST">

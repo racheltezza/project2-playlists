@@ -1,6 +1,12 @@
-# SEI22 Project 2 
+# SEI22 Project 2: Project Playlist
 
-# Project Playlist
+* To Do: develop a full MEHN stack application integrating databases and working with MVC architechture
+
+* Languages: HTML, CSS, JavaScript
+
+* Stack: Mongo, Express, Handlebars, Node
+
+* Libraries: Bootstrap
 
 [GitHub](https://github.com/racheltezza/project2-playlists "My gitHub repo")
 
@@ -16,13 +22,5 @@
 
 #### ERD
 <img src="/images/playlists_erd.jpg" alt="wireframe" width="350"/>
-
-* To Do: develop a full MEHN stack application integrating databases and working with MVC architechture
-
-* Languages: HTML, CSS, JavaScript
-
-* Stack: Mongo, Express, Handlebars, Node
-
-* Libraries: Bootstrap
 
 
