@@ -4,7 +4,7 @@
 
 [GitHub](https://github.com/racheltezza/project2-playlists "My gitHub repo")
 
-<!-- [Project](https://rezzaproject1jeopardy.netlify.com/ "My deployed site") -->
+[Project](https://morning-badlands-64029.herokuapp.com/users "My deployed site")
 
 [Trello](https://trello.com/b/HBh6qHWL/sei22-project-2 "My Trello board")
 
@@ -12,11 +12,11 @@
 ![playlists wireframes](/images/playlists_wireframes2.JPG)
 ![playlists ERD](/images/playlists_erd.jpg)
 
-To Do: develop an application integrating databases and working with MVC architechture
+To Do: develop a full MEHN stack application integrating databases and working with MVC architechture
 
 Languages: HTML, CSS, JavaScript
 
-Tools: Mongo, Mongoose, Heroku, Express, Handlebars
+Stack: Mongo, Express, Handlebars, Node
 
 Libraries: Bootstrap
 
