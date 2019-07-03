@@ -18,10 +18,10 @@ const connectionString = process.env.MONGODB_URI || "mongodb://localhost/users";
  *
  * NOTE: newUrlParser diables a deprecation warning
  */
-// mongoose.connect(connectionString, { useNewUrlParser: true})
-//   .then(() => {
-//     console.log("connected to mongo at: " + connectionString);
-//   });
+mongoose.connect(connectionString, { useNewUrlParser: true})
+  .then(() => {
+    console.log("connected to mongo at: " + connectionString);
+  });
 
   if (process.env.MONGODB_URI) {
     mongoose.connect(process.env.MONGODB_URI);
