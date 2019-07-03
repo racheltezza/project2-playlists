@@ -4,29 +4,41 @@
 <form method="POST" action="/users/{{playlist.userId}}/playlists/{{playlist._id}}/songs">
 
     <div class="form-group">
-        <label for="name">Title</label>
+        <label for="name" class="form-label">Title</label>
         <input type="text" name="name" id="name" placeholder="name">
     </div>
 
        <div class="form-group">
-        <label for="artist">Artist</label>
+        <label for="artist" class="form-label">Artist</label>
         <input type="text" name="artist" id="artist" placeholder="artist">
     </div>
 
     <div class="form-group">
-        <label for="genre">Genre</label>
-        <input type="text" name="genre" id="genre" placeholder="genre">
+        <label for="genre" class="form-label">Genre</label>
+        <select class="custom-select" name="genre" id="genre">
+            <option selected>Genre</option>
+            <option>Alternative</option>
+            <option>Hip Hop</option>
+            <option>Pop</option>
+            <option>Electronic</option>
+            <option>Rock</option>
+        </select>
     </div>
 
     <div class="form-group">
-        <label for="tempo">Tempo</label>
-        <input type="text" name= "tempo" id="tempo" placeholder="tempo">
+        <label for="tempo" class="form-label">Tempo</label>
+        <select class="custom-select" name= "tempo" id="tempo">
+            <option selected>Tempo</option>
+            <option>Slow</option>
+            <option>Medium</option>
+            <option>Fast</option>
+        </select>
     </div>
 
-       <div class="form-group">
+       {{!-- <div class="form-group">
         <label for="name">File</label>
         <input type="text" name="file" id="file" placeholder="file">
-    </div>
+    </div> --}}
 
     <input type="submit" class="btn btn-primary" value="Create Song" />
 

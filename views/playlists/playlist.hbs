@@ -1,27 +1,28 @@
-<a href="/users/{{playlist.userId}}/playlists">Back To All Playlists</a>
-
 <h2>{{playlist.name}}</h2>
-<a href="/users/{{playlist.userId}}/playlists/{{playlist._id}}/edit">Edit Playlist Info</a>
+
+<div class="clearfix">
+<a href="/users/{{playlist.userId}}/playlists" class="back-to-playlists">Back To All Playlists</a>
+<a href="/users/{{playlist.userId}}/playlists/{{playlist._id}}/edit" class="edit-playlist">Edit Playlist Info</a>
+</div>
 
 <div>
-<p class="sublist-item">{{playlist.genre}}</p>
-<p class="sublist-item">{{playlist.tempo}}</p>
-
+<p class="sublist-item-genre">{{playlist.genre}}</p>
+<p class="sublist-item-tempo">{{playlist.tempo}}</p>
 </div>
 
 
 {{#each songs}} 
-<ul>
+<ul id="song-detailed">
    
-<li> <a href="/users/{{userId}}/playlists/{{playlistId}}/songs/{{_id}}">"{{name}}"</a></li>
-<li>{{artist}}</li>
+<li class="name"> <a href="/users/{{userId}}/playlists/{{playlistId}}/songs/{{_id}}">"{{name}}"</a></li>
+<li class="artist">/ {{artist}} /</li>
 
-<li>{{genre}}</li>
-<li>{{tempo}}</li>
-<li>{{file}}</li>
+<li class="genre"> {{genre}} /</li>
+<li class="tempo"> {{tempo}}</li>
+{{!-- <li class="file">{{file}}</li> --}}
 <li> 
         <form action="/users/{{userId}}/playlists/{{playlistId}}/songs/{{_id}}?_method=DELETE" method="POST">
-<input type="submit"  class="btn btn-danger" value="Remove Song">
+<input type="submit"  class="btn btn-warning" value="Remove Song">
 
 
 </form>

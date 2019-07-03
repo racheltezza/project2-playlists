@@ -3,10 +3,10 @@
 <form method="POST" action="/users/{{user._id}}/playlists">
 
     <div class="form-group">
-        <label for="name">Name</label>
+        <label for="name" class="form-label">Name</label>
         <input type="text" name="name" id="name" placeholder="name">
     </div>
-    <div class="form-group">
+    {{!-- <div class="form-group">
         <label for="genre">Genre</label>
         <input type="text" name="genre" id="genre" placeholder="genre">
     </div>
@@ -14,6 +14,28 @@
     <div class="form-group">
         <label for="tempo">Tempo</label>
         <input type="text" name= "tempo" id="tempo" placeholder="tempo">
+    </div> --}}
+
+    <div class="form-group">
+        <label for="genre" class="form-label">Genre</label>
+        <select class="custom-select" name="genre" id="genre">
+            <option selected>Genre</option>
+            <option>Alternative</option>
+            <option>Hip Hop</option>
+            <option>Pop</option>
+            <option>Electronic</option>
+            <option>Rock</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="tempo" class="form-label">Tempo</label>
+        <select class="custom-select" name= "tempo" id="tempo">
+            <option selected>Tempo</option>
+            <option>Slow</option>
+            <option>Medium</option>
+            <option>Fast</option>
+        </select>
     </div>
 
     <input type="submit" class="btn btn-primary" value="Create Playlist" />

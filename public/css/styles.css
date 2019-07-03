@@ -1,16 +1,38 @@
+body {
+    background-color: #071013;
+}
+
 h2 {
-    color: purple;
+    color: #eb5160;
     text-align: center;
+    /* margin: 0 90px 0 0; */
+    display: flex;
+    justify-content: center;
 }
 
 ul {
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
   list-style: none;
+  color: #dfe0e2;
+  /* display: flex;
+  justify-content: center; */
 }
 
-.sublist-item {
+.sublist-item-genre {
     font-size: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #b7999c;
+}
+
+.sublist-item-tempo {
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #b7999c;
 }
 
 p {
@@ -19,14 +41,15 @@ p {
 
 .btn-danger {
     display: flex;
-    margin: 0 auto;
+    margin: 50px auto;
     justify-content: center; 
 }
 
 a {
     display: flex;
     margin: 0 auto;
-    justify-content: center; 
+    justify-content: center;
+    color: #dfe0e2;
 }
 
 .badge-primary {
@@ -52,4 +75,100 @@ a {
     display: flex;
     margin: 0 auto;
     justify-content: center;
+}
+
+.back-to-playlists {
+    float: left;
+    margin: 0px 0 0 10px;
+}
+
+.edit-playlist {
+    float: right;
+    margin: 0 10px 0 0;
+}
+
+.back-to-users {
+    float: left;
+    margin: 0px 0 0 10px;
+}
+
+.view-profile {
+    float: right;
+    margin: 0 10px 0 0;
+}
+
+.name {
+    font-size: 20px;
+    display: inline-flex;
+    justify-content: left;
+}
+
+.artist {
+    font-size: 20px;
+    display: inline-flex;
+    justify-content: center;
+    color: #b7999c;
+}
+
+.genre {
+    font-size: 20px;
+    display: inline-flex;
+    justify-content: center;
+    color: #b7999c;
+}
+
+.tempo {
+    font-size: 20px;
+    display: inline-flex;
+    justify-content: right;
+    color: #b7999c;
+}
+
+.file {
+    font-size: 20px;
+}
+
+.custom-select {
+    width: 25vw;
+}
+
+/* #song-detailed {
+    display: inline-flex;
+    margin: 0 auto;
+    justify-content: center;
+} */
+
+.new-playlist-link {
+    display: flex;
+    justify-content: center;
+    color: #eb5160;
+}
+
+.to-user-playlists {
+    color: #b7999c;
+    font-size: 30px;
+}
+
+.new-user {
+    color: #eb5160;
+    margin: 50px auto;
+}
+
+.profile-info {
+    color: #b7999c;
+}
+
+.profile-item {
+    margin: 30px auto;
+}
+
+.form-label {
+    color: #dfe0e2;
+    margin: auto 10px;
+}
+
+.btn-outline-primary {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
 }

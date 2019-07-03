@@ -1,8 +1,9 @@
-<a href="/users">Back to All Users</a>
-
 <h2>All {{user.name}}'s Playlists</h2>
 
-<a href="/users/{{user._id}}">View {{user.name}}'s Profile</a>
+<div class="clearfix">
+<a href="/users" class="back-to-users">Back to All Users</a>
+<a href="/users/{{user._id}}" class="view-profile">View {{user.name}}'s Profile</a>
+</div>
 {{!-- {{#each user._id.playlist}}
 {{name}}
 {{genre}}
@@ -17,9 +18,9 @@
 
 
 
-<li class="sublist-item">{{genre}}</li>
+<li class="sublist-item-genre">{{genre}}</li>
 
-<li  class="sublist-item">{{tempo}}</li>
+<li  class="sublist-item-tempo">{{tempo}}</li>
 
 </form>
 
@@ -28,4 +29,8 @@
 {{/each}}
 
 
-<a href="/users/{{user._id}}/playlists/new" >Add New Playlist</a>
+{{!-- <a href="/users/{{user._id}}/playlists/new" class="new-playlist-link">Add New Playlist</a> --}}
+
+<form>
+<input type="button" value="Add New Playlist" onclick="window.location.href='/users/{{user._id}}/playlists/new'" class="btn btn-outline-primary"/>
+</form>
