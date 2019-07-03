@@ -62,6 +62,11 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
+
+app.get('/', (req, res) => {
+    res.redirect('/users')
+})
+
 app.use('/users', userRouter)
 app.use('/users/:userId/playlists', playlistRouter)
 app.use('/users/:userId/playlists/:playlistId/songs', songRouter)
