@@ -26,8 +26,14 @@ const mongoose = require('./connection.js')
  *
  */
 const SongSchema = new mongoose.Schema({
- name: String,
- artist: String,
+ name: {
+   type: String,
+   required: true
+ },
+ artist: {
+   type: String,
+   required: true
+ },
  genre: String,
  tempo: String,
  file: String,

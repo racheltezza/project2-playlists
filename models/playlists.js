@@ -27,7 +27,10 @@ const mongoose = require('./connection.js')
  *
  */
 const PlaylistSchema = new mongoose.Schema({
- name: String,
+ name: {
+   type: String,
+   required: true
+ },
  genre: String,
  dateCreated: Date,
  tempo: String,
