@@ -5,7 +5,10 @@ body {
 h2 {
     color: #eb5160;
     text-align: center;
-    margin: 0 auto;
+    margin: 10px auto;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 4px;
+    text-transform: uppercase;
     /* display: flex;
     justify-content: center; */
 }
@@ -24,7 +27,7 @@ ul {
 li {
     display: flex;
     justify-content: center;
-    margin: auto 10px;
+    margin: 10px;
 }
 
 #playlist-songs {
@@ -196,7 +199,18 @@ a {
     margin: 20px auto;
 }
 
-/* .btn-warning {
-    margin: 10px auto;
+.btn-warning {
+    margin: auto 40px;
     
-} */
+}
+
+.badge-light {
+    text-align: center;
+    height: 20px;
+    margin: 7px;
+    background-color: #eb5160;
+    color: #dfe0e2;
+    padding: 2px;
+
+
+}

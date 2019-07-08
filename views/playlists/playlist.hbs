@@ -19,7 +19,7 @@
 
 <li class="genre"> / {{genre}}</li>
 <li class="tempo"> / {{tempo}}</li>
-{{!-- <li class="file">{{file}}</li> --}}
+<li class="file"> / <a href="{{file}}" class="badge badge-light">Play</a></li>
 <li> 
         <form action="/users/{{userId}}/playlists/{{playlistId}}/songs/{{_id}}?_method=DELETE" method="POST">
 <input type="submit"  class="btn btn-warning btn-sm" value="Remove Song">
