@@ -10,6 +10,10 @@
 
 {{/each}} --}}
 
+<form>
+<input type="button" value="Add New Playlist" onclick="window.location.href='/users/{{user._id}}/playlists/new'" class="btn btn-outline-success"/>
+</form>
+
 {{#each playlists}}
 
 <ul>
@@ -31,6 +35,3 @@
 
 {{!-- <a href="/users/{{user._id}}/playlists/new" class="new-playlist-link">Add New Playlist</a> --}}
 
-<form>
-<input type="button" value="Add New Playlist" onclick="window.location.href='/users/{{user._id}}/playlists/new'" class="btn btn-outline-primary"/>
-</form>

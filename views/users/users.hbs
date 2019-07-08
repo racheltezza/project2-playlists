@@ -1,5 +1,9 @@
 <h2>ALL USERS</h2>
 
+<form>
+<input type="button" value="Add New User" onclick="window.location.href='/users/new'" class="btn btn-outline-success"/>
+</form>
+
 {{#each users}}
 
 <ul class="list-group list-group-flush">
@@ -11,7 +15,3 @@
 {{/each}}
 
 {{!-- <a href="/users/new" class="new-user">Add New User</a> --}}
-
-<form>
-<input type="button" value="Add New User" onclick="window.location.href='/users/new'" class="btn btn-outline-primary"/>
-</form>

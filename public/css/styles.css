@@ -1,5 +1,7 @@
 body {
     background-color: #071013;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 3px;
 }
 
 h2 {
@@ -90,6 +92,13 @@ a {
     display: flex;
     margin: 0 auto;
     justify-content: center;
+    background-color: #3BE627;
+    border-color: #3BE627;
+}
+
+.btn-primary:hover {
+    background-color: #34C623;
+    border-color: #34C623;
 }
 
 .back-to-playlists {
@@ -192,11 +201,20 @@ a {
     margin: auto 10px;
 }
 
-.btn-outline-primary {
+.btn-outline-success {
+    /* border-color: #FFB62E;
+    color: #FFB62E; */
+    border-color: #6AF50B;
+    color: #6AF50B;
     display: block;
     /* text-align: center; */
     /* justify-content: center; */
     margin: 20px auto;
+}
+
+.btn-outline-success:hover {
+    background-color: #3BE627;
+    /* background-color: #FFB62E; */
 }
 
 .btn-warning {
@@ -208,8 +226,9 @@ a {
     text-align: center;
     height: 20px;
     margin: 7px;
-    background-color: #eb5160;
-    color: #dfe0e2;
+    background-color: #b7999c;
+    /* background-color: #eb5160; */
+    /* color: #dfe0e2; */
     padding: 2px;
 
 

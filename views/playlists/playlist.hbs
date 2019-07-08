@@ -11,6 +11,11 @@
 </div>
 
 
+<form>
+<input type="button" value="Add New Song To Playlist" onclick="window.location.href='/users/{{playlist.userId}}/playlists/{{playlist._id}}/songs/new'" class="btn btn-outline-success"
+/>
+</form>
+
 {{#each songs}} 
 <ul id="playlist-songs">
    
@@ -36,9 +41,7 @@
 
 {{!-- <a href="/users/{{playlist.userId}}/playlists/{{playlist._id}}/songs/new">Add New Song To Playlist</a> --}}
 
-<form>
-<input type="button" value="Add New Song To Playlist" onclick="window.location.href='/users/{{playlist.userId}}/playlists/{{playlist._id}}/songs/new'" class="btn btn-outline-primary"/>
-</form>
+
 
 
     <form action="/users/{{playlist.userId}}/playlists/{{playlist._id}}?_method=DELETE" method="POST">
