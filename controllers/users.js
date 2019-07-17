@@ -5,38 +5,20 @@ const express = require('express')
 
 /* Step 2
  *
- * Import the api files from the models
- *
- * TODO: change the file path to the models file you'll need to use.
- * TODO: rename this from `templateApi` to something more sensible (e.g:
- * `shopsAPI`)
- *
- * NOTE: You may need to import more than one API to create the 
- * controller you need.
- * 
+ * Import the api files from the models 
  */
 const userApi = require('../models/users.js')
 const playlistApi = require('../models/playlists.js')
 
 /* Step 3 
- * 
  * Create a new router.
- *
- * the router will "contain" all the request handlers that you define in this file.
- * TODO: rename this from templateRouter to something that makes sense. (e.g:
- * `shopRouter`)
  */
 const userRouter = express.Router()
 
 /* Step 4
  * 
- * TODO: Put all request handlers here
+ *Put all request handlers here
  */
-
-/* Step 5
- *
- * TODO: delete this handler; it's just a sample
- */ 
 userRouter.get('/', (req, res) => {
   userApi.getAllUsers()
   .then((users) => {
@@ -44,11 +26,6 @@ userRouter.get('/', (req, res) => {
     console.log(users)
   })
 })
-
-// userRouter.get('/:userId', (req, res) => {
-//   userApi.getOneUser(req.params.userId)
-//   return (userId)
-// })
 
 userRouter.post('/', (req, res) => {
   userApi.addNewUser(req.body)
@@ -90,11 +67,6 @@ userRouter.delete('/:userId', (req, res) => {
       res.send(err)
     })
 })
-
-
-// userRouter.delete('/', (req, res) => {
-//   userApi.deleteUser(req.params.userId)
-// })
 
 /* Step 6
  *

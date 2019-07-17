@@ -1,17 +1,17 @@
 <h2>ALL USERS</h2>
 
 <form>
-<input type="button" value="Add New User" onclick="window.location.href='/users/new'" class="btn btn-outline-success"/>
+    <input type="button" value="Add New User" onclick="window.location.href='/users/new'" class="btn btn-outline-success"/>
 </form>
 
 {{#each users}}
 
-<ul class="list-group list-group-flush">
-<li><a href="/users/{{_id}}/playlists" class="to-user-playlists">{{name}}</a></li>
-<li class="font-weight-bold">{{username}}</li>
-</ul>
-
-
+    <ul class="list-group list-group-flush">
+        <li>
+            <a href="/users/{{_id}}/playlists" class="to-user-playlists">{{name}}</a>
+        </li>
+        <li class="font-weight-bold">{{username}}
+        </li>
+    </ul>
+    
 {{/each}}
-
-{{!-- <a href="/users/new" class="new-user">Add New User</a> --}}

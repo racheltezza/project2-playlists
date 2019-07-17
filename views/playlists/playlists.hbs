@@ -1,37 +1,34 @@
 <h2>{{user.name}}'s Playlists</h2>
 
 <div class="clearfix">
-<a href="/users" class="back-to-users">Back to All Users</a>
-<a href="/users/{{user._id}}" class="view-profile">View {{user.name}}'s Profile</a>
+    <a href="/users" class="back-to-users">Back to All Users</a>
+    <a href="/users/{{user._id}}" class="view-profile">View {{user.name}}'s Profile</a>
 </div>
-{{!-- {{#each user._id.playlist}}
-{{name}}
-{{genre}}
-
-{{/each}} --}}
 
 <form>
-<input type="button" value="Add New Playlist" onclick="window.location.href='/users/{{user._id}}/playlists/new'" class="btn btn-outline-success"/>
+    <input 
+        type="button" 
+        value="Add New Playlist" 
+        onclick="window.location.href='/users/{{user._id}}/playlists/new'" 
+        class="btn btn-outline-success"
+    />
 </form>
 
 {{#each playlists}}
 
 <ul>
 
-<li><a href="/users/{{userId}}/playlists/{{_id}}/songs">{{name}}</a></li>
+    <li>
+        <a href="/users/{{userId}}/playlists/{{_id}}/songs">{{name}}</a>
+    </li>
 
+    <li class="sublist-item-genre">{{genre}}</li>
 
-
-<li class="sublist-item-genre">{{genre}}</li>
-
-<li  class="sublist-item-tempo">{{tempo}}</li>
+    <li  class="sublist-item-tempo">{{tempo}}</li>
 
 </form>
 
 
 </ul>
 {{/each}}
-
-
-{{!-- <a href="/users/{{user._id}}/playlists/new" class="new-playlist-link">Add New Playlist</a> --}}
 
