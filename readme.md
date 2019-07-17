@@ -1,4 +1,4 @@
-# SEI22 Project 2: Project Playlist
+# SEI22 Project 2: projectPlaylist
 
 * To Do: develop a full MEHN stack application integrating databases and working with MVC architechture
 
