@@ -7,7 +7,7 @@
     "express": "^4.17.1",
     "hbs": "^4.0.4",
     "method-override": "^3.0.0",
-    "mongoose": "^5.6.1"
+    "mongoose": "^5.7.5"
   },
   "devDependencies": {},
   "scripts": {
